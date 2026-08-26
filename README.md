@@ -36,11 +36,23 @@ python3 -m http.server 8000
 - Confirmación de asistencia que arma el mensaje y lo envía por WhatsApp
 - Botón de música (melodía tropical suave generada en el navegador)
 
+## Versión pública
+
+Esta versión (la que se publica en GitHub Pages) **no incluye datos sensibles**:
+
+- Sin coordenadas ni enlaces directos a Google Maps / Waze — la ubicación exacta
+  se pide por WhatsApp al confirmar.
+- Sin fotos de las niñas — los marcos quedan como placeholders.
+
+La versión completa (ubicación exacta + fotos) se comparte por separado, en privado,
+solo con la lista de invitados.
+
+Sí se mantiene el WhatsApp de contacto (Gaby) porque es el canal para confirmar
+asistencia y pedir la ubicación.
+
 ## Pendientes
 
-- Fotos reales de Carol y Camila
 - Hora exacta de la fiesta (ahora hay un valor de referencia: 3:00 pm)
-- Nombre del lugar (si aplica)
 
 ---
 
