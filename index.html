@@ -1,7 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Carol &amp; Camila cumplen 10</title>
+<meta name="description" content="Invitación al cumpleaños número 10 de las gemelas Carol y Camila. Sábado 26 de septiembre de 2026, fiesta tropical. Confirma tu asistencia.">
+<meta name="theme-color" content="#FF9C2B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%8A%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_EC">
+<meta property="og:site_name" content="Carol & Camila cumplen 10">
+<meta property="og:title" content="Carol & Camila cumplen 10 — ¡Estás invitado!">
+<meta property="og:description" content="Sábado 26 de septiembre de 2026 · Fiesta tropical · Confirma tu asistencia.">
+<meta property="og:url" content="https://shiryu007.github.io/carol-camila-10/">
+<meta property="og:image" content="https://shiryu007.github.io/carol-camila-10/og.jpg">
+<meta property="og:image:secure_url" content="https://shiryu007.github.io/carol-camila-10/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Carol & Camila cumplen 10 años — sábado 26 de septiembre de 2026, fiesta tropical.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carol & Camila cumplen 10 — ¡Estás invitado!">
+<meta name="twitter:description" content="Sábado 26 de septiembre de 2026 · Fiesta tropical · Confirma tu asistencia.">
+<meta name="twitter:image" content="https://shiryu007.github.io/carol-camila-10/og.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap">
+<noscript><style>.opener{display:none!important}</style></noscript>
 
 <style>
   /* ============ TOKENS ============ */
@@ -63,7 +90,7 @@
   ::selection{ background:var(--sunny); color:var(--on-bright); }
 
   .wrap{ max-width:600px; margin-inline:auto; padding-inline:22px; position:relative; }
-  .sec{ padding-block:clamp(52px,12vw,92px); }
+  .sec{ padding-block:clamp(50px,12vw,88px); }
 
   h2,h3{ line-height:1.15; text-wrap:balance; margin:0; }
   h2{ font-family:var(--f-script); font-weight:700; font-size:clamp(2.1rem,8vw,3.1rem); letter-spacing:.005em; }
@@ -87,10 +114,10 @@
   /* ============ BUTTONS ============ */
   .btn{
     -webkit-appearance:none; appearance:none; cursor:pointer;
-    display:inline-flex; align-items:center; gap:9px;
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
     font-family:var(--f-ui); font-weight:600; font-size:1rem;
     padding:14px 24px; border-radius:999px; border:2px solid transparent;
-    text-decoration:none; line-height:1;
+    text-decoration:none; line-height:1; min-height:48px;
     background:linear-gradient(120deg,var(--mango),var(--guava));
     color:var(--on-bright); box-shadow:var(--shadow-sm);
     transition:transform .14s ease, box-shadow .14s ease, filter .14s ease;
@@ -100,16 +127,35 @@
   .btn.ghost{ background:transparent; border-color:currentColor; color:var(--ink); box-shadow:none; }
   .btn.ghost:hover{ filter:none; background:var(--shell-2); }
   .btn.wa{ background:var(--lime); color:var(--on-bright); }
-  .btn.block{ width:100%; justify-content:center; }
+  .btn.block{ width:100%; }
   .btn svg{ width:19px; height:19px; flex:none; }
 
-  :where(a,button,.swatch,input):focus-visible{
+  :where(a,button,summary,.swatch,input):focus-visible{
     outline:3px solid var(--accent-2); outline-offset:3px; border-radius:6px;
   }
 
+  /* ============ OPENER ============ */
+  .opener{
+    position:fixed; inset:0; z-index:100;
+    display:flex; align-items:center; justify-content:center; padding:26px;
+    background:
+      radial-gradient(circle at 78% 16%, rgba(255,255,255,.55), rgba(255,255,255,0) 46%),
+      linear-gradient(160deg,#FF7A2F 0%,#FF9C2B 34%,#FFC247 66%,#FFDE72 100%);
+    color:var(--hero-ink); text-align:center;
+    transition:opacity .55s ease, transform .55s ease, visibility .55s;
+  }
+  .opener.gone{ opacity:0; visibility:hidden; transform:scale(1.06); }
+  .opener-card{ display:flex; flex-direction:column; align-items:center; gap:6px; width:100%; max-width:420px; }
+  .opener .o-balloons{ width:118px; height:auto; margin-bottom:10px; filter:drop-shadow(0 8px 12px rgba(120,40,10,.28)); }
+  .opener-kick{ font-family:var(--f-ui); font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:.78rem; color:#6A2A1E; }
+  .opener-name{ font-family:var(--f-script); font-weight:700; font-size:clamp(2.4rem,11vw,3.6rem); line-height:1.05; max-width:100%; overflow-wrap:break-word; }
+  .opener-name .amp{ color:var(--accent-2); }
+  .opener-sub{ font-family:var(--f-hand); font-weight:600; font-size:1.4rem; margin-bottom:14px; }
+  .opener-btn{ background:var(--hero-ink); color:var(--hero-cream); border-color:var(--hero-ink); }
+
   /* ============ DECORATIVE FRAME ============ */
   .frame-deco{ position:fixed; inset:0; z-index:30; pointer-events:none; }
-  .deco-slot{ position:absolute; width:clamp(96px,22vw,170px); height:clamp(96px,22vw,170px); }
+  .deco-slot{ position:absolute; width:clamp(88px,20vw,158px); height:clamp(88px,20vw,158px); }
   .deco-slot.tl{ top:-12px; left:-12px; }
   .deco-slot.tr{ top:-12px; right:-12px; transform:scaleX(-1); }
   .deco-slot.bl{ bottom:-12px; left:-12px; transform:scaleY(-1); }
@@ -153,11 +199,11 @@
   }
   .hero .eyebrow{ color:#6A2A1E; margin:0; }
 
-  .namewrap{ display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
+  .namewrap{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
   .balloon10{
-    width:clamp(122px,30vw,178px); height:auto; display:block;
-    margin:0 2px -6px auto; overflow:visible;
-    transform:translate(var(--bx,0px),var(--by,0px)) rotate(calc(3deg + var(--br,0deg)));
+    width:clamp(86px,22vw,122px); height:auto; display:block;
+    align-self:flex-start; margin:0 0 2px 2px; overflow:visible; cursor:pointer;
+    transform:translate(var(--bx,0px),var(--by,0px)) rotate(calc(-2deg + var(--br,0deg))) scale(var(--bp,1));
     transition:transform .3s ease; filter:drop-shadow(0 10px 14px rgba(120,40,10,.28));
   }
   .balloon10 .bstr{ stroke:#7A3E1E; stroke-width:2.5; fill:none; stroke-linecap:round; }
@@ -170,9 +216,9 @@
 
   .names{
     font-family:var(--f-script); font-weight:700;
-    font-size:clamp(3rem,14vw,5.4rem);
-    line-height:1.02; letter-spacing:.005em; margin:0;
-    overflow-wrap:break-word; text-shadow:0 1px 2px rgba(90,20,10,.16);
+    font-size:clamp(2.5rem,11.2vw,5rem);
+    line-height:1.04; letter-spacing:.005em; margin:0;
+    max-width:100%; overflow-wrap:break-word; text-shadow:0 1px 2px rgba(90,20,10,.16);
   }
   .names .amp{ color:var(--accent-2); display:inline-block; }
   .hero-sub{ font-family:var(--f-hand); font-weight:600; font-size:1.5rem; line-height:1.3; color:var(--hero-ink); }
@@ -186,31 +232,31 @@
   /* ============ QUICK ACTIONS ============ */
   .quickbar{
     display:flex; justify-content:center; flex-wrap:wrap;
-    gap:clamp(14px,5vw,30px); padding:clamp(28px,7vw,44px) 18px;
+    gap:clamp(12px,4.5vw,28px); padding:clamp(26px,7vw,42px) 16px;
   }
-  .qa{ display:flex; flex-direction:column; align-items:center; gap:8px; width:78px;
+  .qa{ display:flex; flex-direction:column; align-items:center; gap:8px; width:72px;
     text-decoration:none; background:none; border:0; cursor:pointer; font:inherit; }
   .qa .ring{
-    width:62px; height:62px; border-radius:50%; display:grid; place-items:center;
+    width:60px; height:60px; border-radius:50%; display:grid; place-items:center;
     color:var(--on-bright); box-shadow:var(--shadow-sm); transition:transform .14s ease;
   }
   .qa:hover .ring{ transform:translateY(-3px); }
   .qa:active .ring{ transform:translateY(1px); }
-  .qa .ring svg{ width:26px; height:26px; }
-  .qa .lbl{ font-family:var(--f-ui); font-weight:600; font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
+  .qa .ring svg{ width:25px; height:25px; }
+  .qa .lbl{ font-family:var(--f-ui); font-weight:600; font-size:.66rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); }
   .qa.q1 .ring{ background:var(--guava); } .qa.q2 .ring{ background:var(--lime); }
   .qa.q3 .ring{ background:var(--mango); } .qa.q4 .ring{ background:var(--grape); }
 
   /* ============ COUNTDOWN ============ */
   .count{ text-align:center; }
   .clock{ display:flex; justify-content:center; gap:clamp(10px,4vw,26px); margin-top:10px; }
-  .unit{ display:flex; flex-direction:column; align-items:center; min-width:62px; }
+  .unit{ display:flex; flex-direction:column; align-items:center; min-width:60px; }
   .unit b{
-    font-family:var(--f-ui); font-weight:600; font-size:clamp(2.1rem,10vw,3.2rem); line-height:1;
+    font-family:var(--f-ui); font-weight:600; font-size:clamp(2rem,9.5vw,3.1rem); line-height:1;
     color:var(--accent); font-variant-numeric:tabular-nums;
   }
   .unit span{
-    font-family:var(--f-ui); font-weight:500; font-size:.72rem; letter-spacing:.14em;
+    font-family:var(--f-ui); font-weight:500; font-size:.7rem; letter-spacing:.14em;
     text-transform:uppercase; color:var(--ink-soft); margin-top:8px;
   }
   .count .party{ font-family:var(--f-script); font-weight:700; font-size:clamp(1.8rem,8vw,2.7rem); color:var(--accent); }
@@ -250,40 +296,49 @@
   }
   .card .k{
     font-family:var(--f-ui); font-weight:600; font-size:.72rem; letter-spacing:.14em;
-    text-transform:uppercase; color:var(--accent); padding-top:3px; flex:none; width:74px;
+    text-transform:uppercase; color:var(--accent); padding-top:3px; flex:none; width:70px;
   }
-  .card .v{ color:var(--ink); }
-  .card .v .big{ font-family:var(--f-ui); font-weight:600; font-size:1.12rem; display:block; }
+  .card .v{ color:var(--ink); min-width:0; }
+  .card .v .big{ font-family:var(--f-ui); font-weight:600; font-size:1.1rem; display:block; }
   .card .v small{ color:var(--ink-soft); }
+  .cal-links{ display:flex; flex-wrap:wrap; gap:12px 20px; margin-top:20px; }
   .cal-link{
-    display:inline-flex; align-items:center; gap:7px; margin-top:20px;
+    display:inline-flex; align-items:center; gap:7px;
     font-family:var(--f-ui); font-weight:600; text-decoration:none; color:var(--accent-2);
+    background:none; border:0; cursor:pointer; font-size:1rem;
   }
   .cal-link:hover{ text-decoration:underline; }
+
+  /* ============ TIMELINE ============ */
+  .timeline{ margin-top:24px; }
+  .tl-item{ display:flex; gap:16px; padding:12px 0; position:relative; }
+  .tl-item::before{ content:""; position:absolute; left:6px; top:22px; bottom:-2px; width:2px; background:var(--line); }
+  .tl-item:last-child::before{ display:none; }
+  .tl-dot{ flex:none; width:14px; height:14px; border-radius:50%; margin-top:6px; box-shadow:0 0 0 4px var(--sand); }
+  .tl-item:nth-child(1) .tl-dot{ background:var(--guava); }
+  .tl-item:nth-child(2) .tl-dot{ background:var(--mango); }
+  .tl-item:nth-child(3) .tl-dot{ background:var(--sunny); }
+  .tl-item:nth-child(4) .tl-dot{ background:var(--lime); }
+  .tl-item:nth-child(5) .tl-dot{ background:var(--lagoon); }
+  .tl-item:nth-child(6) .tl-dot{ background:var(--grape); }
+  .tl-time{ font-family:var(--f-ui); font-weight:600; color:var(--accent); font-variant-numeric:tabular-nums; flex:none; width:74px; }
+  .tl-body b{ font-family:var(--f-ui); font-weight:600; display:block; }
+  .tl-body small{ color:var(--ink-soft); }
+  .tl-note{ margin-top:14px; font-size:.9rem; color:var(--ink-soft); }
 
   /* ============ MAP ============ */
   .mapcard{
     background:var(--shell); border:1.5px solid var(--line); border-radius:var(--radius);
     box-shadow:var(--shadow); overflow:hidden; margin-top:22px;
   }
-  .map-svg{ display:block; width:100%; height:auto; background:var(--shell-2); }
-  .map-svg .road{ stroke:var(--line); stroke-width:14; stroke-linecap:round; }
-  .map-svg .route{ stroke:var(--accent-2); stroke-width:4; stroke-dasharray:2 10; stroke-linecap:round; fill:none; }
-  .map-svg .blob{ fill:var(--lime); opacity:.16; }
-  .map-svg .blob2{ fill:var(--lagoon); opacity:.14; }
-  .map-svg .pin{ fill:var(--guava); }
-  .map-svg .pin-dot{ fill:var(--shell); }
-  .map-svg .ping{ fill:none; stroke:var(--guava); stroke-width:3; transform-box:fill-box; transform-origin:center; animation:ping 2.4s ease-out infinite; }
-  .map-svg .tree{ font-size:26px; }
-  .map-svg .tag{ font-family:var(--f-hand); font-weight:700; font-size:17px; fill:var(--ink); }
-  .map-svg .tagbg{ fill:var(--sunny); }
-  @keyframes ping{ 0%{ transform:scale(.55); opacity:.7 } 100%{ transform:scale(2.3); opacity:0 } }
-
+  .mapembed{ position:relative; width:100%; aspect-ratio:16/11; background:var(--shell-2); }
+  .mapembed iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  @media (max-width:480px){ .mapembed{ aspect-ratio:1/1; } }
   .mapmeta{ padding:18px 22px 22px; }
   .mapmeta .here{ font-family:var(--f-ui); font-weight:600; font-size:1.05rem; }
   .mapmeta .coords{ color:var(--ink-soft); font-variant-numeric:tabular-nums; font-size:.92rem; margin-top:2px; }
   .mapbtns{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
-  .mapbtns .btn{ font-size:.94rem; padding:12px 20px; }
+  .mapbtns .btn{ font-size:.94rem; padding:12px 20px; min-height:44px; }
   .lost{ margin-top:14px; font-size:.88rem; color:var(--ink-soft); }
   .lost a{ font-weight:700; white-space:nowrap; }
 
@@ -297,12 +352,24 @@
   .gift-note{ margin-top:20px; color:var(--ink-soft); }
   .gift-note a{ font-weight:700; }
 
+  /* ============ FAQ ============ */
+  .faq{ margin-top:22px; display:flex; flex-direction:column; gap:10px; }
+  .faq details{ background:var(--shell); border:1.5px solid var(--line); border-radius:16px; padding:2px 18px; }
+  .faq summary{
+    cursor:pointer; padding:16px 0; font-family:var(--f-ui); font-weight:600;
+    list-style:none; display:flex; justify-content:space-between; gap:12px; align-items:center;
+  }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{ content:"+"; font-family:var(--f-ui); font-size:1.5rem; line-height:1; color:var(--accent); flex:none; }
+  .faq details[open] summary::after{ content:"\2013"; }
+  .faq details p{ padding:0 0 16px; color:var(--ink-soft); }
+
   /* ============ DRESS CODE ============ */
   .spectrum{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
   .swatch{
     -webkit-appearance:none; appearance:none; cursor:pointer;
     border:3px solid transparent; border-radius:16px; padding:0;
-    width:78px; height:78px; position:relative; box-shadow:var(--shadow-sm); transition:transform .14s ease;
+    width:76px; height:76px; position:relative; box-shadow:var(--shadow-sm); transition:transform .14s ease;
   }
   .swatch:hover{ transform:translateY(-3px); }
   .swatch[aria-pressed="true"]{ border-color:var(--ink); transform:translateY(-3px) scale(1.04); }
@@ -320,7 +387,7 @@
 
   /* ============ RSVP FORM ============ */
   .rsvp{ background:var(--shell-2); border-radius:34px; }
-  .form{ margin-top:24px; display:flex; flex-direction:column; gap:18px; max-width:420px; }
+  .form{ margin-top:24px; display:flex; flex-direction:column; gap:18px; max-width:430px; }
   .field{ display:flex; flex-direction:column; gap:7px; }
   .field label, .field .flabel{
     font-family:var(--f-ui); font-weight:600; font-size:.82rem;
@@ -337,21 +404,23 @@
   .seg label{
     flex:1; text-align:center; cursor:pointer;
     font-family:var(--f-ui); font-weight:600; font-size:.95rem; text-transform:none; letter-spacing:0;
-    padding:11px 10px; border-radius:12px;
+    padding:12px 10px; border-radius:12px;
     background:var(--shell); border:1.5px solid var(--line); color:var(--ink);
     transition:background .12s ease, border-color .12s ease;
   }
   .seg input:checked + label{ background:var(--lime); border-color:transparent; color:var(--on-bright); }
   .seg input:focus-visible + label{ outline:3px solid var(--accent-2); outline-offset:2px; }
-  .stepper{ display:flex; align-items:center; gap:14px; }
+  .counts{ display:flex; gap:26px; flex-wrap:wrap; }
+  .cnt{ display:flex; flex-direction:column; gap:7px; }
+  .stepper{ display:flex; align-items:center; gap:12px; }
   .stepper button{
-    width:42px; height:42px; border-radius:12px; cursor:pointer;
+    width:44px; height:44px; border-radius:12px; cursor:pointer;
     background:var(--shell); border:1.5px solid var(--line); color:var(--ink);
     font-size:1.4rem; line-height:1; display:grid; place-items:center;
   }
   .stepper output{
     font-family:var(--f-ui); font-weight:600; font-size:1.3rem;
-    min-width:2ch; text-align:center; font-variant-numeric:tabular-nums;
+    min-width:1.6ch; text-align:center; font-variant-numeric:tabular-nums;
   }
   .preview{
     font-size:.9rem; color:var(--ink-soft); background:var(--shell);
@@ -363,8 +432,9 @@
 
   /* ============ FOOTER ============ */
   footer{ text-align:center; padding:44px 22px 120px; position:relative; }
+  .share-row{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
   footer .btn.ghost{ color:var(--ink); }
-  footer .sig{ margin-top:22px; font-family:var(--f-hand); font-weight:600; color:var(--ink-soft); font-size:1.2rem; }
+  footer .sig{ margin-top:24px; font-family:var(--f-hand); font-weight:600; color:var(--ink-soft); font-size:1.2rem; }
   footer .date{ font-family:var(--f-script); font-weight:700; color:var(--accent); font-size:1.5rem; letter-spacing:.04em; margin-top:2px; }
 
   /* ============ DOCK / MUSIC / TOAST / POP / LIGHTBOX ============ */
@@ -429,12 +499,32 @@
     html{ scroll-behavior:auto; }
     *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
     .reveal{ opacity:1; transform:none; }
-    .map-svg .ping{ display:none; }
     .dock{ transition:none; }
     .frame-deco *, .balloon10 *{ animation:none !important; }
     .deco{ opacity:1 !important; transform:none !important; }
+    .opener{ display:none !important; }
   }
 </style>
+</head>
+<body>
+
+<!-- ===== opener ===== -->
+<div class="opener" id="opener" role="dialog" aria-modal="true" aria-label="Abrir invitación">
+  <div class="opener-card">
+    <svg class="o-balloons" viewBox="0 0 236 220" aria-hidden="true">
+      <path d="M62 172 q -12 24 0 42" stroke="#7A3E1E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M156 178 q 14 22 0 40" stroke="#7A3E1E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <g fill="#9E1458"><rect x="41" y="30" width="42" height="140" rx="21"/><rect x="10" y="44" width="42" height="28" rx="14" transform="rotate(-34 31 58)"/><rect x="24" y="150" width="76" height="30" rx="15"/></g>
+      <g fill="#EF4D8E"><rect x="45" y="34" width="34" height="132" rx="17"/><rect x="14" y="48" width="34" height="20" rx="10" transform="rotate(-34 31 58)"/><rect x="28" y="154" width="68" height="22" rx="11"/></g>
+      <circle cx="160" cy="106" r="52" fill="none" stroke="#0A5A63" stroke-width="46"/>
+      <circle cx="160" cy="106" r="52" fill="none" stroke="#23B9C6" stroke-width="34"/>
+    </svg>
+    <p class="opener-kick">Estás invitado a</p>
+    <p class="opener-name">Carol <span class="amp">&amp;</span> Camila</p>
+    <p class="opener-sub">cumplen 10 años 🎈</p>
+    <button class="btn opener-btn" id="openerBtn" type="button">Abrir invitación</button>
+  </div>
+</div>
 
 <!-- ===== botanical symbols (semi-realistic) ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -581,7 +671,7 @@
     <canvas id="scene" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="namewrap">
-        <svg class="balloon10" viewBox="0 0 236 220" role="img" aria-label="Globos con el número 10">
+        <svg class="balloon10" id="balloon10" viewBox="0 0 236 220" role="img" aria-label="Globos con el número 10">
           <path class="bstr" d="M62 172 q -12 24 0 42"/>
           <path class="bstr" d="M156 178 q 14 22 0 40"/>
           <g class="bln b1">
@@ -636,10 +726,9 @@
       <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.5V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14.5l-3-3"/></svg></span>
       <span class="lbl">Confirmar</span>
     </a>
-    <a class="qa q3" target="_blank" rel="noopener"
-       href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Los%2010%20de%20Carol%20%26%20Camila&dates=20260926T200000Z/20260926T230000Z&details=Fiesta%20tropical%20de%20Carol%20y%20Camila.%20Te%20enviamos%20la%20ubicaci%C3%B3n%20por%20WhatsApp%20al%20confirmar%20con%20Gaby%3A%20096%20836%200787">
+    <a class="qa q3" href="#agenda">
       <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></span>
-      <span class="lbl">Calendario</span>
+      <span class="lbl">Agenda</span>
     </a>
     <a class="qa q4" href="#regalos">
       <span class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7.5h20V12H2zM12 21V7.5M12 7.5H7.5a2.5 2.5 0 0 1 0-5C11 2.5 12 7.5 12 7.5Zm0 0h4.5a2.5 2.5 0 0 0 0-5C13 2.5 12 7.5 12 7.5Z"/></svg></span>
@@ -702,7 +791,7 @@
         </div>
         <div class="card">
           <div class="k">Dónde</div>
-          <div class="v"><span class="big">Ubicación por WhatsApp al confirmar</span><small>Al llegar, busca los globos de colores en la entrada.</small></div>
+          <div class="v"><span class="big">Mira el mapa aquí abajo</span><small>Al llegar, busca los globos de colores en la entrada.</small></div>
         </div>
         <div class="card">
           <div class="k">El plan</div>
@@ -710,11 +799,36 @@
         </div>
       </div>
 
-      <a class="cal-link" target="_blank" rel="noopener"
-         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Los%2010%20de%20Carol%20%26%20Camila&dates=20260926T200000Z/20260926T230000Z&details=Fiesta%20tropical%20de%20Carol%20y%20Camila.%20Te%20enviamos%20la%20ubicaci%C3%B3n%20por%20WhatsApp%20al%20confirmar%20con%20Gaby%3A%20096%20836%200787">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4M12 12.5v4M10 14.5h4"/></svg>
-        Agregar a mi calendario
-      </a>
+      <div class="cal-links">
+        <a class="cal-link" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Los%2010%20de%20Carol%20%26%20Camila&dates=20260926T200000Z/20260926T230000Z&details=Fiesta%20tropical%20de%20Carol%20y%20Camila.%20Confirma%20con%20Gaby%3A%20096%20836%200787&location=-2.851666%2C-78.959450">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4M12 12.5v4M10 14.5h4"/></svg>
+          Google Calendar
+        </a>
+        <button class="cal-link" type="button" id="icsBtn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+          Apple / Outlook (.ics)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="ribbon" role="presentation"></div>
+
+  <!-- ================= AGENDA ================= -->
+  <section class="sec" id="agenda">
+    <div class="wrap reveal">
+      <p class="eyebrow">Así será la tarde</p>
+      <h2>La agenda</h2>
+
+      <div class="timeline">
+        <div class="tl-item"><span class="tl-dot"></span><span class="tl-time">3:00</span><span class="tl-body"><b>Llegada y bienvenida</b><small>Recíbelos con jugo y algo de picar.</small></span></div>
+        <div class="tl-item"><span class="tl-dot"></span><span class="tl-time">3:30</span><span class="tl-body"><b>Juegos y estación de arte</b><small>Actividades para los peques.</small></span></div>
+        <div class="tl-item"><span class="tl-dot"></span><span class="tl-time">4:30</span><span class="tl-body"><b>Cumpleaños feliz y torta</b></span></div>
+        <div class="tl-item"><span class="tl-dot"></span><span class="tl-time">5:00</span><span class="tl-body"><b>Piñata</b></span></div>
+        <div class="tl-item"><span class="tl-dot"></span><span class="tl-time">6:00</span><span class="tl-body"><b>Despedida</b><small>Con dulcero para el camino.</small></span></div>
+      </div>
+      <p class="tl-note">Horario tentativo — se confirma unos días antes.</p>
     </div>
   </section>
 
@@ -727,36 +841,21 @@
       <h2>La fiesta es por aquí</h2>
 
       <div class="mapcard">
-        <svg class="map-svg" viewBox="0 0 360 240" role="img" aria-label="Mapa ilustrado del lugar de la fiesta">
-          <ellipse class="blob" cx="70" cy="60" rx="80" ry="60"/>
-          <ellipse class="blob2" cx="300" cy="200" rx="90" ry="70"/>
-          <path class="road" d="M-10 175 H370"/>
-          <path class="road" d="M120 250 V120 H320"/>
-          <path class="road" d="M40 -10 V90 H150"/>
-          <path class="route" d="M20 175 H120 V95 H196"/>
-          <text class="tree" x="250" y="70">🌴</text>
-          <text class="tree" x="60" y="150">🌴</text>
-          <text class="tree" x="300" y="140">🌺</text>
-          <g transform="translate(196 92)">
-            <circle class="ping" cx="0" cy="-14" r="12"/>
-            <path class="pin" d="M0 8 C -13 -8 -12 -22 0 -28 C 12 -22 13 -8 0 8 Z"/>
-            <circle class="pin-dot" cx="0" cy="-16" r="5"/>
-          </g>
-          <g transform="translate(150 34)">
-            <rect class="tagbg" x="0" y="0" width="120" height="30" rx="15"/>
-            <text class="tag" x="14" y="21">¡Es aquí! 🎈</text>
-          </g>
-        </svg>
+        <div class="mapembed">
+          <iframe title="Mapa del lugar de la fiesta" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=-2.851666,-78.959450&z=16&hl=es&output=embed"></iframe>
+        </div>
         <div class="mapmeta">
-          <p class="here">Ubicación de la fiesta</p>
-          <p>Te enviamos el punto exacto por WhatsApp cuando confirmes tu asistencia. Al llegar, busca los globos de colores en la entrada.</p>
+          <p class="here">📍 Ubicación de la fiesta</p>
+          <p class="coords">-2.851666, -78.959450</p>
           <div class="mapbtns">
-            <a class="btn" target="_blank" rel="noopener" href="https://wa.me/593968360787">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.5-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.4-1.7c-.1-.3 0-.4.1-.5l.4-.5.3-.5a.5.5 0 0 0 0-.5L8.9 7.6c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3A2.8 2.8 0 0 0 6.2 10a5 5 0 0 0 1 2.6 11.3 11.3 0 0 0 4.4 3.9c2.6 1 2.6.7 3.1.7a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg>
-              Pedir ubicación por WhatsApp
+            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=-2.851666,-78.959450">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.4-7-11a7 7 0 0 1 14 0c0 4.6-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              Cómo llegar (Google Maps)
             </a>
+            <a class="btn ghost" target="_blank" rel="noopener" href="https://waze.com/ul?ll=-2.851666,-78.959450&navigate=yes">Abrir en Waze</a>
           </div>
-          <p class="lost">El día de la fiesta, si te pierdes, llama a <a href="tel:0968360787">096 836 0787</a></p>
+          <p class="lost">¿Te pierdes en el camino? Llama a <a href="tel:0968360787">096 836 0787</a></p>
         </div>
       </div>
     </div>
@@ -782,6 +881,26 @@
 
       <p class="gift-note">¿Quieren unirse para un regalo en conjunto? Escríbanle a
         <a href="https://wa.me/593968360787" target="_blank" rel="noopener">Gaby por WhatsApp</a>.</p>
+    </div>
+  </section>
+
+  <div class="ribbon" role="presentation"></div>
+
+  <!-- ================= FAQ ================= -->
+  <section class="sec" id="faq">
+    <div class="wrap reveal">
+      <p class="eyebrow">Bueno saber</p>
+      <h2>Preguntas frecuentes</h2>
+
+      <div class="faq">
+        <details><summary>¿Pueden ir los hermanitos?</summary><p>Sí, toda la familia es bienvenida. Solo cuéntanos cuántos van (adultos y niños) al confirmar.</p></details>
+        <details><summary>¿Los papás se quedan?</summary><p>¡Claro! Los papás que quieran quedarse son bienvenidos. También pueden dejar a los peques; habrá adultos a cargo.</p></details>
+        <details><summary>¿Hay dónde parquear?</summary><p>Sí, hay espacio para estacionar cerca de la entrada. (Confirmamos los detalles unos días antes.)</p></details>
+        <details><summary>¿Hasta qué hora es?</summary><p>La fiesta termina alrededor de las 6:00 pm.</p></details>
+        <details><summary>¿Y si llueve?</summary><p>La fiesta se hace igual: hay un área techada para resguardarnos.</p></details>
+        <details><summary>¿Llevo algo?</summary><p>Solo muchas ganas de jugar y bailar. Si quieres traer un detalle, mira la sección <a href="#regalos">Mesa de regalos</a>.</p></details>
+      </div>
+      <p class="tl-note">¿Otra duda? Escríbele a Gaby: <a href="https://wa.me/593968360787" target="_blank" rel="noopener">WhatsApp</a> · 096 836 0787</p>
     </div>
   </section>
 
@@ -833,12 +952,22 @@
             </div>
           </div>
 
-          <div class="field" id="countField">
-            <span class="flabel">¿Cuántas personas?</span>
-            <div class="stepper">
-              <button type="button" id="minus" aria-label="Quitar una persona">−</button>
-              <output id="countOut">2</output>
-              <button type="button" id="plus" aria-label="Agregar una persona">+</button>
+          <div class="counts" id="countsField">
+            <div class="cnt">
+              <span class="flabel">Adultos</span>
+              <div class="stepper">
+                <button type="button" data-step="adult" data-dir="-1" aria-label="Quitar un adulto">−</button>
+                <output id="adultOut">2</output>
+                <button type="button" data-step="adult" data-dir="1" aria-label="Agregar un adulto">+</button>
+              </div>
+            </div>
+            <div class="cnt">
+              <span class="flabel">Niños</span>
+              <div class="stepper">
+                <button type="button" data-step="kid" data-dir="-1" aria-label="Quitar un niño">−</button>
+                <output id="kidOut">1</output>
+                <button type="button" data-step="kid" data-dir="1" aria-label="Agregar un niño">+</button>
+              </div>
             </div>
           </div>
 
@@ -868,10 +997,16 @@
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    <button class="btn ghost" id="shareBtn" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
-      Compartir invitación
-    </button>
+    <div class="share-row">
+      <button class="btn ghost" id="shareBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>
+        Compartir
+      </button>
+      <a class="btn wa" id="waShare" target="_blank" rel="noopener" href="https://wa.me/">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z"/></svg>
+        Compartir por WhatsApp
+      </a>
+    </div>
     <p class="sig">Hecho con cariño para Carol &amp; Camila</p>
     <p class="date">26 · 09 · 2026</p>
   </footer>
@@ -900,6 +1035,31 @@
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   var TARGET = new Date("2026-09-26T15:00:00-05:00").getTime();
   var WA = "https://wa.me/593968360787";
+
+  /* ---------- Opener ---------- */
+  var opener = document.getElementById("opener");
+  function closeOpener(){
+    if (!opener) return;
+    opener.classList.add("gone");
+    document.body.style.overflow = "";
+    try{ sessionStorage.setItem("cc10-opened","1"); }catch(e){}
+    setTimeout(function(){ if (opener && opener.parentNode) opener.parentNode.removeChild(opener); }, 650);
+    opener = null;
+  }
+  (function initOpener(){
+    var seen = false;
+    try{ seen = sessionStorage.getItem("cc10-opened") === "1"; }catch(e){}
+    if (!opener || seen || reduce){
+      if (opener && opener.parentNode) opener.parentNode.removeChild(opener);
+      opener = null;
+      return;
+    }
+    document.body.style.overflow = "hidden";
+    var btn = document.getElementById("openerBtn");
+    if (btn) btn.focus();
+    opener.addEventListener("click", function(e){ if (e.target === opener || e.target === btn) closeOpener(); });
+    document.addEventListener("keydown", function(e){ if (e.key === "Escape" && opener) closeOpener(); });
+  })();
 
   /* ---------- Countdown ---------- */
   var clock = document.getElementById("clock"), clockTimer = null;
@@ -979,17 +1139,52 @@
   }
   document.querySelectorAll('a[href="#rsvp"]').forEach(function(el){ el.addEventListener("click", burst); });
 
+  /* ---------- Balloon pop ---------- */
+  var bln = document.getElementById("balloon10");
+  if (bln){
+    bln.addEventListener("click", function(){
+      burst();
+      if (reduce) return;
+      bln.style.setProperty("--bp","1.12");
+      setTimeout(function(){ bln.style.setProperty("--bp","1"); }, 200);
+    });
+  }
+
   /* ---------- Share ---------- */
+  var shareText = "Estás invitado al cumple 10 de Carol y Camila 🎉";
+  var waShare = document.getElementById("waShare");
+  if (waShare) waShare.href = "https://wa.me/?text=" + encodeURIComponent(shareText + " " + location.href);
   var shareBtn = document.getElementById("shareBtn");
   if (shareBtn){
     shareBtn.addEventListener("click", function(){
-      var data = { title:"Los 10 de Carol & Camila", text:"Estás invitado al cumple 10 de Carol y Camila 🎉", url:location.href };
+      var data = { title:"Los 10 de Carol & Camila", text:shareText, url:location.href };
       if (navigator.share){ navigator.share(data).catch(function(){}); }
       else if (navigator.clipboard){
         navigator.clipboard.writeText(location.href).then(
           function(){ showToast("Enlace copiado ✅"); },
           function(){ showToast("Copia el enlace de la barra"); });
       } else { showToast("Copia el enlace de la barra"); }
+    });
+  }
+
+  /* ---------- Add to calendar (.ics) ---------- */
+  var icsBtn = document.getElementById("icsBtn");
+  if (icsBtn){
+    icsBtn.addEventListener("click", function(){
+      var ics = [
+        "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//carol-camila-10//ES","CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT","UID:carol-camila-10-2026@shiryu007.github.io",
+        "DTSTAMP:20260826T000000Z","DTSTART:20260926T200000Z","DTEND:20260926T230000Z",
+        "SUMMARY:Los 10 de Carol & Camila",
+        "DESCRIPTION:Fiesta tropical. Confirma con Gaby: 096 836 0787",
+        "LOCATION:-2.851666\\, -78.959450","END:VEVENT","END:VCALENDAR"
+      ].join("\r\n");
+      var blob = new Blob([ics], { type:"text/calendar;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = "carol-camila-10.ics";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
     });
   }
 
@@ -1010,27 +1205,34 @@
   if (form){
     var nameEl = document.getElementById("rName");
     var msgEl  = document.getElementById("rMsg");
-    var out    = document.getElementById("countOut");
-    var prev   = document.getElementById("preview");
-    var countField = document.getElementById("countField");
-    var count = 2, KEY = "cc10-rsvp";
+    var adultOut = document.getElementById("adultOut");
+    var kidOut = document.getElementById("kidOut");
+    var prev = document.getElementById("preview");
+    var countsField = document.getElementById("countsField");
+    var adults = 2, kids = 1, KEY = "cc10-rsvp";
 
     try{
       var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
       if (saved.name) nameEl.value = saved.name;
       if (saved.msg)  msgEl.value = saved.msg;
-      if (typeof saved.count === "number") count = Math.min(12, Math.max(1, saved.count));
-      if (saved.going === "no"){ document.getElementById("goNo").checked = true; }
+      if (typeof saved.adults === "number") adults = Math.min(20, Math.max(0, saved.adults));
+      if (typeof saved.kids === "number") kids = Math.min(20, Math.max(0, saved.kids));
+      if (saved.going === "no") document.getElementById("goNo").checked = true;
     }catch(e){}
 
     function going(){ var g = document.querySelector('input[name="going"]:checked'); return g ? g.value : "si"; }
+    function people(){
+      var parts = [];
+      if (adults > 0) parts.push(adults + (adults===1 ? " adulto" : " adultos"));
+      if (kids   > 0) parts.push(kids + (kids===1 ? " niño/a" : " niños"));
+      return parts.length ? parts.join(" y ") : "1 persona";
+    }
     function compose(){
       var who = (nameEl.value||"").trim() || "(tu nombre)";
       var extra = (msgEl.value||"").trim();
       var line;
       if (going() === "si"){
-        line = "Hola Gaby 👋 Soy " + who + ". ¡Confirmamos! Vamos " + count + (count===1?" persona":" personas") +
-               " al cumple 10 de Carol y Camila 🎉";
+        line = "Hola Gaby 👋 Soy " + who + ". ¡Confirmamos! Vamos " + people() + " al cumple 10 de Carol y Camila 🎉";
       } else {
         line = "Hola Gaby 👋 Soy " + who + ". Gracias por la invitación; esta vez no podremos ir al cumple de Carol y Camila.";
       }
@@ -1038,13 +1240,19 @@
       return line;
     }
     function refresh(){
-      out.textContent = count;
-      countField.style.display = (going() === "si") ? "" : "none";
+      adultOut.textContent = adults; kidOut.textContent = kids;
+      countsField.style.display = (going() === "si") ? "" : "none";
       prev.textContent = compose();
-      try{ localStorage.setItem(KEY, JSON.stringify({ name:nameEl.value, msg:msgEl.value, count:count, going:going() })); }catch(e){}
+      try{ localStorage.setItem(KEY, JSON.stringify({ name:nameEl.value, msg:msgEl.value, adults:adults, kids:kids, going:going() })); }catch(e){}
     }
-    document.getElementById("plus").addEventListener("click", function(){ if (count<12){ count++; refresh(); } });
-    document.getElementById("minus").addEventListener("click", function(){ if (count>1){ count--; refresh(); } });
+    form.querySelectorAll('[data-step]').forEach(function(b){
+      b.addEventListener("click", function(){
+        var dir = +b.dataset.dir;
+        if (b.dataset.step === "adult") adults = Math.min(20, Math.max(0, adults + dir));
+        else kids = Math.min(20, Math.max(0, kids + dir));
+        refresh();
+      });
+    });
     form.addEventListener("input", refresh);
     form.addEventListener("change", refresh);
     form.addEventListener("submit", function(e){
@@ -1087,7 +1295,7 @@
 
   /* ---------- Balloon pointer parallax ---------- */
   var bal = document.querySelector(".balloon10");
-  if (bal && hero && !reduce){
+  if (bal && hero && !reduce && window.matchMedia("(pointer:fine)").matches){
     hero.addEventListener("pointermove", function(e){
       var r = hero.getBoundingClientRect();
       var dx = (e.clientX - r.left) / r.width - .5;
@@ -1218,3 +1426,5 @@
   }
 })();
 </script>
+</body>
+</html>
