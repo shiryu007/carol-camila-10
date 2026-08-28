@@ -27,7 +27,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@800&family=Caveat:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Fredoka:wght@400;500;600&family=Nunito:ital,wght@0,400;0,600;0,700;1,600&display=swap">
 <noscript><style>
   .opener{display:none!important}
   .hero.animate .balloon-in,.hero.animate .names .w,.hero.animate .eyebrow,
@@ -315,7 +315,11 @@
     transition:transform .3s ease; filter:drop-shadow(0 14px 18px rgba(120,40,10,.32));
   }
   .balloon10 .bstr{ stroke:#8A4A24; stroke-width:2.4; fill:none; stroke-linecap:round; }
-  .balloon10 .b-weld line{ stroke:rgba(84,12,50,.30); stroke-width:2.6; stroke-linecap:round; }
+  .balloon10 .b-digit{
+    font-family:"Baloo 2","Fredoka",system-ui,sans-serif; font-weight:800;
+    font-size:158px; paint-order:stroke; stroke-width:8; stroke-linejoin:round;
+  }
+  .balloon10 .b-spec{ fill:url(#gSpec); }
   .balloon10 .b-knot{ fill:#8A4A24; }
   .balloon10 .bln{ transform-box:fill-box; transform-origin:center bottom; animation:blnFloat 4.6s ease-in-out infinite alternate; }
   .balloon10 .b0{ animation-duration:5.4s; animation-delay:-1.6s; }
@@ -324,17 +328,15 @@
   .names{
     font-family:var(--f-script); font-weight:700;
     font-size:clamp(2.7rem,12vw,5.4rem);
-    line-height:1.0; letter-spacing:.005em; margin:0; padding-bottom:.08em;
+    line-height:1.0; letter-spacing:.005em; margin:0; padding-bottom:.06em;
     max-width:100%; overflow-wrap:break-word;
-    background:linear-gradient(178deg,#5E1F37 0%, #3A1020 55%, #260A17 100%);
-    -webkit-background-clip:text; background-clip:text;
-    color:transparent; -webkit-text-fill-color:transparent;
-    filter:drop-shadow(0 3px 8px rgba(90,20,10,.32)) drop-shadow(0 1px 0 rgba(255,240,225,.4));
+    color:#33112C;
+    text-shadow:0 2px 3px rgba(90,20,10,.24), 0 1px 0 rgba(255,240,225,.35);
   }
   .names .w{ display:inline-block; }
   .names .amp{
-    color:#0E7C88; -webkit-text-fill-color:#0E7C88;
-    display:inline-block; font-size:1.14em; transform:rotate(-7deg) translateY(.05em);
+    color:#0E7C88;
+    display:inline-block; font-size:1.1em; transform:rotate(-7deg) translateY(.05em);
   }
   .names-swash{ width:min(74%,300px); height:20px; margin:3px 0 0 6px; overflow:visible; display:block; }
   .names-swash path{ stroke-dasharray:520; stroke-dashoffset:0; }
@@ -872,45 +874,20 @@
     <div class="wrap">
       <div class="namewrap">
         <span class="balloon-in">
-        <svg class="balloon10" id="balloon10" viewBox="0 0 244 214" role="img" aria-label="Globos metálicos con el número 10">
-          <path class="bstr" d="M58 184 q -11 15 -5 30 q 6 13 -3 24"/>
-          <path class="bstr" d="M168 166 q 13 17 6 33 q -6 14 4 24"/>
+        <svg class="balloon10" id="balloon10" viewBox="0 0 250 196" role="img" aria-label="Globos con el número 10">
+          <path class="bstr" d="M54 158 q -10 16 -3 30 q 6 12 -3 22"/>
+          <path class="bstr" d="M170 158 q 12 17 4 32 q -6 13 4 23"/>
 
           <g class="bln b1">
-            <g stroke="#A6135F" fill="none" stroke-linecap="round">
-              <line x1="60" y1="44" x2="60" y2="150" stroke-width="54"/>
-              <line x1="60" y1="50" x2="34" y2="62" stroke-width="30"/>
-              <line x1="34" y1="164" x2="86" y2="164" stroke-width="44"/>
-            </g>
-            <g stroke="url(#foilA)" fill="none" stroke-linecap="round">
-              <line x1="60" y1="44" x2="60" y2="150" stroke-width="42"/>
-              <line x1="60" y1="50" x2="35" y2="62" stroke-width="20"/>
-              <line x1="36" y1="164" x2="84" y2="164" stroke-width="32"/>
-            </g>
-            <line x1="49" y1="54" x2="49" y2="140" stroke="rgba(255,255,255,.6)" stroke-width="6" stroke-linecap="round"/>
-            <ellipse cx="47" cy="66" rx="9" ry="15" fill="url(#gSpec)" transform="rotate(-14 47 66)"/>
-            <g class="b-weld">
-              <line x1="35" y1="60" x2="41" y2="60"/><line x1="35" y1="92" x2="41" y2="92"/><line x1="35" y1="124" x2="41" y2="124"/>
-              <line x1="79" y1="60" x2="85" y2="60"/><line x1="79" y1="92" x2="85" y2="92"/><line x1="79" y1="124" x2="85" y2="124"/>
-            </g>
-            <path class="b-knot" d="M52 170 l8 12 l8 -12 z"/>
+            <text class="b-digit" x="52" y="150" fill="url(#foilA)" stroke="#A6135F">1</text>
+            <ellipse class="b-spec" cx="66" cy="58" rx="9" ry="18" transform="rotate(-13 66 58)"/>
+            <path class="b-knot" d="M58 150 l8 12 l8 -12 z"/>
           </g>
 
           <g class="bln b0">
-            <circle cx="170" cy="104" r="47" fill="none" stroke="#0A5A63" stroke-width="56"/>
-            <circle cx="170" cy="104" r="47" fill="none" stroke="url(#foilB)" stroke-width="42"/>
-            <path d="M136 76 A47 47 0 0 1 152 60" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="9" stroke-linecap="round"/>
-            <path d="M152 90 A26 26 0 0 1 162 80" fill="none" stroke="rgba(255,255,255,.32)" stroke-width="5" stroke-linecap="round"/>
-            <ellipse cx="144" cy="78" rx="12" ry="17" fill="url(#gSpec)" transform="rotate(-22 144 78)"/>
-            <g class="b-weld">
-              <line x1="210" y1="104" x2="224" y2="104"/>
-              <line x1="190" y1="139" x2="197" y2="151"/>
-              <line x1="150" y1="139" x2="143" y2="151"/>
-              <line x1="130" y1="104" x2="116" y2="104"/>
-              <line x1="150" y1="69" x2="143" y2="57"/>
-              <line x1="190" y1="69" x2="197" y2="57"/>
-            </g>
-            <path class="b-knot" d="M162 150 l8 13 l8 -13 z"/>
+            <text class="b-digit" x="140" y="150" fill="url(#foilB)" stroke="#0A5A63">0</text>
+            <ellipse class="b-spec" cx="150" cy="60" rx="12" ry="20" transform="rotate(-18 150 60)"/>
+            <path class="b-knot" d="M162 150 l8 12 l8 -12 z"/>
           </g>
         </svg>
         </span>
