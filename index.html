@@ -162,15 +162,50 @@
       linear-gradient(165deg,#6E0F4A 0%,#C81E63 28%,#FF5A72 56%,#FF9B5C 80%,#FFD98A 100%);
     color:var(--hero-ink); text-align:center;
     transition:opacity .55s ease, transform .55s ease, visibility .55s;
+    perspective:1400px;
   }
   .opener.gone{ opacity:0; visibility:hidden; transform:scale(1.06); }
   .opener-card{ display:flex; flex-direction:column; align-items:center; gap:6px; width:100%; max-width:420px; }
-  .opener .o-balloons{ width:118px; height:auto; margin-bottom:10px; filter:drop-shadow(0 8px 12px rgba(120,40,10,.28)); }
   .opener-kick{ font-family:var(--f-ui); font-weight:600; letter-spacing:.16em; text-transform:uppercase; font-size:.78rem; color:rgba(255,241,231,.85); }
-  .opener-name{ font-family:var(--f-script); font-weight:700; font-size:clamp(2.4rem,11vw,3.6rem); line-height:1.05; max-width:100%; overflow-wrap:break-word; text-shadow:0 2px 10px rgba(40,4,28,.4); }
-  .opener-name .amp{ color:var(--accent-2); }
-  .opener-sub{ font-family:var(--f-hand); font-weight:600; font-size:1.4rem; margin-bottom:14px; }
-  .opener-btn{ background:var(--hero-cream); color:var(--hero-deep); border-color:var(--hero-cream); }
+  .opener-title{ font-family:var(--f-script); font-weight:700; font-size:clamp(2.2rem,10vw,3.3rem); line-height:1.05; margin:2px 0 0; text-shadow:0 2px 10px rgba(40,4,28,.4); }
+  .opener-title .amp{ color:var(--accent-2); }
+  .opener-sub{ font-family:var(--f-hand); font-weight:600; font-size:1.25rem; margin-bottom:8px; }
+
+  /* ---- envelope ---- */
+  .envelope{
+    all:unset; position:relative; display:block; cursor:pointer;
+    width:min(90vw,400px); aspect-ratio:3/2; margin:14px auto 0;
+  }
+  .envelope .env-back{
+    position:absolute; inset:0; border-radius:8px 8px 20px 20px;
+    background:linear-gradient(160deg,#FF9A44,#FF6A1E 55%,#E85A16 100%);
+    box-shadow:0 20px 44px rgba(74,14,51,.38);
+    display:flex; align-items:flex-end; justify-content:center; padding-bottom:14%;
+    z-index:1;
+  }
+  .env-deco{ position:absolute; z-index:0; pointer-events:none; filter:drop-shadow(0 6px 10px rgba(74,14,51,.3)); }
+  .env-deco-a{ top:-24px; left:-26px; width:66px; height:66px; }
+  .env-deco-b{ bottom:-16px; right:-18px; width:46px; height:46px; }
+  .env-caption{
+    font-family:var(--f-hand); font-weight:600; font-style:italic; color:#fff;
+    font-size:clamp(1.1rem,5vw,1.4rem); text-shadow:0 2px 6px rgba(120,40,10,.4);
+    transition:opacity .3s ease;
+  }
+  .envelope .env-flap{
+    position:absolute; left:0; right:0; top:0; height:46%;
+    background:linear-gradient(160deg,#FFB169,#FF7A2E);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center; transform:rotateX(0deg);
+    transition:transform .75s cubic-bezier(.6,-.28,.44,1.4);
+    backface-visibility:hidden; box-shadow:0 6px 10px rgba(74,14,51,.18);
+    z-index:3;
+  }
+  .envelope.open .env-flap{ transform:rotateX(180deg); }
+  .envelope.open .env-caption{ opacity:0; }
+  .opener-tap{ font-family:var(--f-hand); font-weight:600; font-size:1.15rem; color:rgba(255,241,231,.9); }
+  @media (prefers-reduced-motion:reduce){
+    .envelope .env-flap, .envelope .env-letter, .envelope .env-seal{ transition:none; }
+  }
 
   /* ============ DECORATIVE FRAME ============ */
   .frame-deco{ position:fixed; inset:0; z-index:30; pointer-events:none; }
@@ -540,18 +575,18 @@
 <!-- ===== opener ===== -->
 <div class="opener" id="opener" role="dialog" aria-modal="true" aria-label="Abrir invitación">
   <div class="opener-card">
-    <svg class="o-balloons" viewBox="0 0 236 220" aria-hidden="true">
-      <path d="M62 172 q -12 24 0 42" stroke="#5A1030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <path d="M156 178 q 14 22 0 40" stroke="#5A1030" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <g fill="#9E1458"><rect x="41" y="30" width="42" height="140" rx="21"/><rect x="10" y="44" width="42" height="28" rx="14" transform="rotate(-34 31 58)"/><rect x="24" y="150" width="76" height="30" rx="15"/></g>
-      <g fill="#EF4D8E"><rect x="45" y="34" width="34" height="132" rx="17"/><rect x="14" y="48" width="34" height="20" rx="10" transform="rotate(-34 31 58)"/><rect x="28" y="154" width="68" height="22" rx="11"/></g>
-      <circle cx="160" cy="106" r="52" fill="none" stroke="#8A3B0E" stroke-width="46"/>
-      <circle cx="160" cy="106" r="52" fill="none" stroke="url(#foilC)" stroke-width="34"/>
-    </svg>
     <p class="opener-kick">Estás invitado a</p>
-    <p class="opener-name">Carol <span class="amp">&amp;</span> Camila</p>
+    <p class="opener-title">Carol <span class="amp">&amp;</span> Camila</p>
     <p class="opener-sub">cumplen 10 años 🎈</p>
-    <button class="btn opener-btn" id="openerBtn" type="button">Abrir invitación</button>
+    <button class="envelope" id="openerBtn" type="button" aria-label="Toca para abrir la invitación de Carol y Camila">
+      <svg class="env-deco env-deco-a" viewBox="0 0 60 60" aria-hidden="true"><use href="#s-hibiscus"/></svg>
+      <svg class="env-deco env-deco-b" viewBox="0 0 44 44" aria-hidden="true"><use href="#s-orange"/></svg>
+      <span class="env-back">
+        <span class="env-caption">¡Ven a celebrar!</span>
+      </span>
+      <span class="env-flap"></span>
+    </button>
+    <p class="opener-tap">Toca el sobre para abrir ✨</p>
   </div>
 </div>
 
@@ -1093,6 +1128,14 @@
     setTimeout(function(){ if (opener && opener.parentNode) opener.parentNode.removeChild(opener); }, 650);
     opener = null;
   }
+  var envOpening = false;
+  function openEnvelope(){
+    if (!opener || envOpening) return;
+    envOpening = true;
+    var env = document.getElementById("openerBtn");
+    if (env) env.classList.add("open");
+    setTimeout(closeOpener, reduce ? 0 : 900);
+  }
   (function initOpener(){
     var seen = false;
     try{ seen = sessionStorage.getItem("cc10-opened") === "1"; }catch(e){}
@@ -1104,7 +1147,7 @@
     document.body.style.overflow = "hidden";
     var btn = document.getElementById("openerBtn");
     if (btn) btn.focus();
-    opener.addEventListener("click", function(e){ if (e.target === opener || e.target === btn) closeOpener(); });
+    opener.addEventListener("click", openEnvelope);
     document.addEventListener("keydown", function(e){ if (e.key === "Escape" && opener) closeOpener(); });
   })();
 
